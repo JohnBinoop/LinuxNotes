@@ -1,0 +1,142 @@
+Security is the key in the mordern computing world
+so in linux there are 2 level of security is called 
+authorisation levels
+
+user amos
+$sudo adduser amos
+
+ company
+	->management
+		->CEO
+		-->user1
+          --->user2
+	->production
+	->sales
+	->finanace
+	->IT
+	->visitors
+
+
+create groups :
+
+$ sudo addgroup <grpname>
+
+->management
+->finanace
+->
+->IT
+-> Visitor
+
+
+
+
+
+1) Ownership
+------------
+
+=>user
+ 	Usually User is the owner of a file
+=>group
+	usergroup contain multiple users
+	all users in one group have sthe same permission in the group
+$addgroup <GrpName>
+$sudo !!
+
+
+/etc/group --- group onfo is stored in here
+
+$ less /etc/group
+
+
+=> Other
+	Any other user who has access to a file
+	Does not own the file
+	Does not belong to a user group
+
+Changing Ownership of a file/Dorectory
+
+$ chown <user> <filename>
+
+$ chown <user>:<group> <filename>
+
+eg: chown  :sales user1
+eg:chown amos:sales user1
+
+
+
+2) Permissions
+----------------
+
+=>read
+	read permission will provide permission to read.
+
+=>write
+	Write permissions will provide permission to write and edit 
+	Write permission to a directory will allow a user to create, delete 
+	and modify a file in that directory.
+
+=>Execute
+	In Windows normally executable files will have "exe" extension. 
+	that is called executable file 
+
+	r read permission
+	w write file
+	x execute permission
+
+
+Changing file/directory permissions
+=====================================
+
+=> chmod permission <file/Directory name>
+ ->using changemode (chmod) command we can assign permissions on a file
+
+There are 2 ways we can assign a permission
+
+1)Absolute (Numeric) mode 
+2) Symbolic mode 
+
+
+File Type
+ |
+ |user   group  Others
+ -r w x  r w x  r w x	---------Symbolic mode
+  | | |  | | |  | | |
+  | | |  | | |  | | |
+  4 2 1  4 2 1  4 2 1  } Absolute/Numeric mode
+  \ | /  \ | /  \ | /
+    7      7      7
+
+user r+w+x (7) group r+x(5) others r+x(5)
+chmod 755 <filename>
+chmod u=rwx,g=rx,o=rx <Filename>
+
+ 
+
+Number	Permission  	Symbol
+========================================
+
+0		no permission	  _
+1		Execute		  --x
+2		Wrirte		  -w-
+3		Exicute+Write 	  -wx
+4		Read			  r--
+5		Read + Execute	  r-x
+6		Read + Write	  rw-
+7 	 Read + Write + Execute	  rwx
+
+
+Summary:
+
+ ->Linux being a multi-user system uses permissions and ownership for security.
+   
+ ->There are three user types on a Linux system User, Group and Other
+   
+ ->Linux divides the file permissions into read, write and execute denoted by r,w, and x
+    
+ ->The permissions on a file can be changed by ‘chmod’ command which can be further divided into Absolute and Symbolic mode
+    
+ ->The ‘chown’ command can change the ownership of a file/directory. Use the following commands: chown user file or chown user:group file
+
+->The ‘chgrp’ command can change the group ownership chrgrp group filename
+  
+ ->What does x – eXecuting a directory mean? A: Being allowed to “enter” a dir and gain possible access to sub-dirs.
