@@ -1,0 +1,20 @@
+Bash Script
+=====================
+shebang line
+#!/usr/bin/bash
+mkdir Management
+mkdir Production
+Mkdir Sale
+
+=>Company
+
+	->management
+		->CEO
+		-->emp1
+          --->emp2
+	->production
+	->sales
+	->finanace
+	->IT
+	->visitors
+This is a Sales department documentThis 

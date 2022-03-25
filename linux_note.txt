@@ -1,0 +1,22 @@
+/   root directory
+~   home directory
+-
+kali sudo user
+
+root is an administrator user
+
+/root - root is the only user account with permission to modify the root directory of a Unix system
+/home- Home directory is the default working directory when a user logs in
+/bin
+/boot
+/usr
+/var
+/dev
+/etc
+/lib
+/sbin
+/opt
+/usr
+/mnt
+/srv
+/sys

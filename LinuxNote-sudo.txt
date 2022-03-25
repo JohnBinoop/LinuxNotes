@@ -1,0 +1,5 @@
+To add a user to sudoers list use following command
+
+$ sudo visudoamos
+
+then it will open the susdoers file -> find the line start with root -> copy that line and paste in next line -> change "root" to your new sudo user.
