@@ -1,0 +1,30 @@
+This is a Note for the Linux system boot process by Binoop
+
+
+->After a computer starts the bios on the mother board checks all the I/O devices in the computer.
+->Once everything is okay then the Boot process will began.
+->The Boor program usually is on boot sector of the first hard drive.
+-> in mordern linux computer that boot loader is GRUB(Grand Unified Boot loader ) 
+->then it look in the hard disk for the bootable files 
+-> and start load the Linux Kernel
+->then Linux Kernel load  the inistial RAM disk which contain bunch of device driver 
+-> then look for the device drivers in the hard drive then load, eventually mount the filesystem
+->all setup and ready to go
+-> Kernel's main focus on the process of input that it was given then intract with the hardware.
+->Linux system will do many things, but we needed to load lots of program innorder to use the computer
+-> to perform that we need a program genarally called servicess or demon
+-> Then initialisation starts once initialisatio starts its takes over mounting the file system
+->At this Point initial RAM disk nolonger needed then gets removed 
+->Then initialisation system continously load then service get loaded to get the computer can be used
+->Boots Logs:
+	->Logs are genarated when computer gets boots up
+	->These logs are volatile that means thease logs are typically removed when computer gets rebooted
+	-> This Logs are located in Kernel's ring buffers,ring buffer is datastructure that record the messages are related to the kerneloperations
+	-> which can be controlled or examin by the command called "dmesg" or journalctl -k
+
+	-> the ringbuffer has a fixed size so it will be deleted older messaged when it gets full.
+	->
+	-
+ 
+
+->
